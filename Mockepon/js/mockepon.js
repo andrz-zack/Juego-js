@@ -131,7 +131,7 @@ const RATIGUEYA_ATAQUES = [
 ratigueya.ataques.push(...RATIGUEYA_ATAQUES)
 
 
-mokepones.push(hipodoge, capipepo, ratigueya)
+mokepones.push(hipodoge,capipepo,ratigueya)
 
 
 function iniciarJuego() {
@@ -162,6 +162,8 @@ sectionVerMapa.style.display = 'none'
     unirseAlJuego()
 
 }
+
+
 function unirseAlJuego(){
     fetch("http://localhost:8080/unirse")
         .then(function (res) {
@@ -178,6 +180,8 @@ function unirseAlJuego(){
 
 
 function seleccionarMascotaJugador() {
+
+    sectionSeleccionarMascota.style.display = 'none'
      
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = inputHipodoge.id
@@ -190,11 +194,9 @@ function seleccionarMascotaJugador() {
         mascotaJugador = inputRatigueya.id
     } else {
         alert('Selecciona una mascota')
-        return
+    
     }
-    sectionSeleccionarMascota.style.display = 'none'
-
-
+    
     seleccionarMokepon(mascotaJugador)
 
     extraerAtaques(mascotaJugador)
