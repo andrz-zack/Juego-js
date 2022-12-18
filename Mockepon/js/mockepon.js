@@ -22,6 +22,7 @@ const mapa = document.getElementById('mapa')
 let enemigoId = null
 let jugadorId = null
 let mokepones = []
+let mokeponesEnemigos = []
 let ataqueJugador = []
 let ataqueEnemigo = []
 let opcionDeMokepones
@@ -463,12 +464,6 @@ function enviarPosicion(x,y){
 
 
 
-
-
-
-
-
-
 function moverDerecha(){
     mascotaJugadorObjeto.velocidadX = 5
 }
@@ -547,15 +542,15 @@ function revisarColision(enemigo){
     ) {
         return;
     }
+
     detenerMovimiento()
     clearInterval(intervalo)
-    console.log('se detecto una colision')
-    //cambio en Platzi
+    console.log('Se detecto una colision');
+
+    enemigoId = enemigo.id
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionVerMapa.style.display = 'none'
     seleccionarMascotaEnemigo(enemigo)
-
-    //alert("Hay colision " + enemigo.nombre)
 }
 
 window.addEventListener('load', iniciarJuego)
