@@ -273,6 +273,20 @@ function secuenciaAtaque(){
     
 }
 
+function enviarAtaques() {
+    fetch(`http://localhost:8080/mokepon/${jugadorId}/ataques`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            ataques: ataqueJugador
+        })
+    })
+
+    intervalo = setInterval(obtenerAtaques, 50)
+}
+
 function obtenerAtaques() {
     fetch(`http://localhost:8080/mokepon/${enemigoId}/ataques`)
         .then(function (res) {
