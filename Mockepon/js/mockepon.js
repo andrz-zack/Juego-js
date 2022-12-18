@@ -435,7 +435,39 @@ function enviarPosicion(x,y){
         y: y
     })
 })
+.then(function (res) {
+    if (res.ok) {
+        res.json()
+            .then(function ({ enemigos }) {
+                console.log(enemigos)
+                mokeponesEnemigos = enemigos.map(function (enemigo) {
+                    let mokeponEnemigo = null
+                    const mokeponNombre = enemigo.mokepon.nombre || ""
+                    if (mokeponNombre === "Hipodoge") {
+                        mokeponEnemigo = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5, './assets/hipodoge.png', enemigo.id)
+                    } else if (mokeponNombre === "Capipepo") {
+                        mokeponEnemigo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5, './assets/capipepo.png', enemigo.id)
+                    } else if (mokeponNombre === "Ratigueya") {
+                        mokeponEnemigo = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5, './assets/ratigueya.png', enemigo.id)
+                    }
+
+                    mokeponEnemigo.x = enemigo.x
+                    mokeponEnemigo.y = enemigo.y
+
+                    return mokeponEnemigo
+                })
+            })
+    }
+})
 }
+
+
+
+
+
+
+
+
 
 function moverDerecha(){
     mascotaJugadorObjeto.velocidadX = 5
