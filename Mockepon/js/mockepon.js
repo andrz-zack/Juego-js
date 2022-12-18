@@ -443,8 +443,8 @@ function enviarPosicion(x,y){
         headers:{"Content-Type":"application/json"
     },
     body: JSON.stringify({
-        x: x,
-        y: y
+        x,
+        y
     })
 })
 .then(function (res) {
@@ -549,9 +549,9 @@ function revisarColision(enemigo){
         abajoMascota < arribaEnemigo ||
         arribaMascota > abajoEnemigo ||
         derechaMascota < izquierdaEnemigo ||
-        izquierdaEnemigo > derechaEnemigo
+        izquierdaMascota > derechaEnemigo
     ) {
-        return;
+        return
     }
 
     detenerMovimiento()
