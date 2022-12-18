@@ -96,12 +96,7 @@ let capipepo = new Mokepon('Capipepo', './assets/mokeponsgreen.png', 5, './asset
 
 let ratigueya = new Mokepon('Ratigueya', './assets/blupo.png', 5, './assets/blupoK.png')
 
-//enemigo //reconsiderar esta parte 
-/* let hipodogeEnemigo = new Mokepon('Hipodoge', './assets/verdepo.png', 5, './assets/verdepoK.png')
 
-let capipepoEnemigo = new Mokepon('Capipepo', './assets/mokeponsgreen.png', 5, './assets/mokeponsgreenK.png')
-
-let ratigueyaEnemigo = new Mokepon('Ratigueya', './assets/blupo.png', 5, './assets/blupoK.png')  */
 
 const HIPODOGE_ATAQUES = [
     {nombre: '💧', id: 'boton-agua'}, 
@@ -136,7 +131,7 @@ const RATIGUEYA_ATAQUES = [
 ratigueya.ataques.push(...RATIGUEYA_ATAQUES)
 
 
-.mokepones.push(hipodoge, capipepo, ratigueya)
+mokepones.push(hipodoge, capipepo, ratigueya)
 
 
 function iniciarJuego() {
