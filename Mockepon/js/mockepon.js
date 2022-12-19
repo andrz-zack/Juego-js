@@ -2,19 +2,19 @@
 const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
 const sectionReiniciar = document.getElementById('reiniciar')
 const botonMascotaJugador = document.getElementById('boton-mascota')
-const botonReiniciar=document.getElementById('boton-reiniciar') 
+const botonReiniciar = document.getElementById('boton-reiniciar') 
 sectionReiniciar.style.display = 'none'
 
-const sectionSeleccionarMascota=document.getElementById('seleccionar-mascota')
-const spanMascotaJugador=document.getElementById('mascota-jugador')
+const sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+const spanMascotaJugador = document.getElementById('mascota-jugador')
 const spanMascotaEnemigo=document.getElementById('mascota-enemigo')
-const spanVidasJugador=document.getElementById('vidas-jugador')
-const spanVidasEnemigo=document.getElementById('vidas-enemigo')
-const sectionMensajes=document.getElementById('resultado')
-const ataquesDelJugador=document.getElementById('ataques-del-jugador')
-const ataquesDelEnemigo=document.getElementById('ataques-del-enemigo')
-const contenedorTarjetas=document.getElementById('contenedorTarjetas')
-const contenedorAtaques=document.getElementById('contenedorAtaques')
+const spanVidasJugador = document.getElementById('vidas-jugador')
+const spanVidasEnemigo = document.getElementById('vidas-enemigo')
+const sectionMensajes = document.getElementById('resultado')
+const ataquesDelJugador = document.getElementById('ataques-del-jugador')
+const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
+const contenedorTarjetas = document.getElementById('contenedorTarjetas')
+const contenedorAtaques = document.getElementById('contenedorAtaques')
 
 const sectionVerMapa = document.getElementById('ver-mapa')
 const mapa = document.getElementById('mapa') 
@@ -63,7 +63,7 @@ mapa.height = alturaQueBuscamos
 
 
 class Mokepon {
-    constructor(nombre, foto, vida, fotoMapa) {
+    constructor(nombre, foto, vida, fotoMapa, id = null) {
         this.nombre=nombre
         this.foto=foto
         this.vida=vida
@@ -311,7 +311,7 @@ function seleccionarMascotaEnemigo(enemigo) {
 }
 
 function ataqueAleatorioEnemigo() {
-    console.log('ataques enemigo', ataquesMokeponEnemigo)
+    console.log('Ataques enemigo', ataquesMokeponEnemigo)
     let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length-1)
 
     if (ataqueAleatorio == 0||ataqueAleatorio == 1){
